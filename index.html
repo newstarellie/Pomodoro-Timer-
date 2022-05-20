@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POMO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="accumulateTime">
+          <h1>今天累積工作時間:</h1>
+          <div>
+            <p class="accumulateHours">00小時</p>
+          </div>
+          <div>
+            <p class="accumulateMinutes">00分鐘</p>
+          </div>
+          <div>
+            <p class="accumulateSecondes">00秒</p>
+          </div>
+        </div>
+        <div class="countdownTime">
+          <h2>倒數時間:</h2>
+          <p class="countDownMinute">00分</p>
+          <p class="countDownSecond">00秒</p>
+        </div>
+      </header>
+      <ul class="clock-list">
+        <li class="clock-item work-clock" data-num="1">
+          <div>
+            <label for="item1">工作1</label>
+            <input
+              class="time-set"
+              min="1"
+              max="60"
+              id="item1"
+              type="number"
+              value="25"
+            />
+            <label for="finished-alarm">結束提醒:</label>
+            <input
+              class="text-set"
+              type="text"
+              id="finished-alarm"
+              value="休息一下"
+            />
+          </div>
+          <ul class="button-list">
+            <li><button type="button" class="start">開始計時</button></li>
+            <li><button type="button" class="pause">暫停</button></li>
+            <li><button type="button" class="continue">繼續</button></li>
+            <li><button type="button" class="stop">停止</button></li>
+          </ul>
+        </li>
+        <li class="clock-item break-clock" data-num="2">
+          <div>
+            <label for="item1">休息1</label>
+            <input
+              class="time-set"
+              min="1"
+              max="60"
+              id="item1"
+              type="number"
+              value="5"
+            />
+            <label for="finished-alarm">結束提醒:</label>
+            <input
+              class="text-set"
+              type="text"
+              id="finished-alarm"
+              value="開始工作"
+            />
+          </div>
+          <ul class="button-list">
+            <li><button type="button" class="start">開始計時</button></li>
+            <li><button type="button" class="pause">暫停</button></li>
+            <li><button type="button" class="continue">繼續</button></li>
+            <li><button type="button" class="stop">停止</button></li>
+          </ul>
+        </li>
+        <li class="clock-item work-clock" data-num="1">
+          <div>
+            <label for="item1">工作1</label>
+            <input
+              class="time-set"
+              min="1"
+              max="60"
+              id="item1"
+              type="number"
+              value="25"
+            />
+            <label for="finished-alarm">結束提醒:</label>
+            <input
+              class="text-set"
+              type="text"
+              id="finished-alarm"
+              value="休息一下"
+            />
+          </div>
+          <ul class="button-list">
+            <li><button type="button" class="start">開始計時</button></li>
+            <li><button type="button" class="pause">暫停</button></li>
+            <li><button type="button" class="continue">繼續</button></li>
+            <li><button type="button" class="stop">停止</button></li>
+          </ul>
+        </li>
+        <li class="clock-item break-clock" data-num="2">
+          <div>
+            <label for="item1">休息1</label>
+            <input
+              class="time-set"
+              min="1"
+              max="60"
+              id="item1"
+              type="number"
+              value="5"
+            />
+            <label for="finished-alarm">結束提醒:</label>
+            <input
+              class="text-set"
+              type="text"
+              id="finished-alarm"
+              value="開始工作"
+            />
+          </div>
+          <ul class="button-list">
+            <li><button type="button" class="start">開始計時</button></li>
+            <li><button type="button" class="pause">暫停</button></li>
+            <li><button type="button" class="continue">繼續</button></li>
+            <li><button type="button" class="stop">停止</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  </body>
+</html>
