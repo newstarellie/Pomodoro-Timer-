@@ -4,28 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRY2</title>
+    <title>TRY</title>
   </head>
-
   <body>
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-    </ul>
-    <div id="setCookie">123</div>
-    <div id="cookieValue"></div>
+    <div class="countdownTime">
+      <h2>倒數時間:</h2>
+      <p class="countDownMinute">00分</p>
+      <p class="countDownSecond">00秒</p>
+    </div>
+
+    <div class="clock-item">
+      <label for="item1">工作1</label>
+      <input
+        class="time-set"
+        min="1"
+        max="60"
+        id="item1"
+        type="number"
+        value="25"
+      />
+      <button type="button" class="start">開始計時</button>
+      <button type="button" class="muteButton">靜音</button>
+    </div>
+
+    <p>123</p>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="try2.js"></script>
+    <script src="try.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.js"
       integrity="sha512-aWlTsIGUhEq2+LQNA7Wq+OsLaouCcGGaHBWzoU9duKy26ImHe12gRtQnj4688p7QUHG+J4CMb+XwgZ8LYqQ+kQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   </body>
 </html>
