@@ -1,19 +1,20 @@
 $(document).ready(function () {
+  let volume = $("input").val() / 100;
+  //console.log(volume);
+  $(".volume").change(function (e) {
+    e.preventDefault();
+    volume = $("input").val() / 100;
+    //console.log(volume);
+  });
   $(".btn1").on("click", function () {
-    playAudio100();
+    playAudio(volume);
   });
 
-  $(".btn2").on("click", function () {
-    playAudio();
-  });
+  function playAudio(volume) {
+    const audio = new Audio(
+      "https://github.com/newstarellie/Pomodoro-Timer-/blob/main/drump.mp3?raw=true"
+    );
+    audio.volume = volume;
+    audio.play();
+  }
 });
-function playAudio100() {
-  const audio = new Audio("/drump.mp3");
-  audio.volume = 1;
-  audio.play();
-}
-function playAudio() {
-  const audio = new Audio("/drump.mp3");
-  audio.volume = 0.2;
-  audio.play();
-}

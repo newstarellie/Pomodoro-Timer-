@@ -12,6 +12,7 @@ $(document).ready(function () {
   } else {
     localStorage.setItem("AllAccumulateTime_second", 0);
   }
+  let muted = false;
   //localStorage.setItem("AllAccumulateTime_second", 0);
   //console.log(typeof AllAccumulateTime_second, AllAccumulateTime_second);
 
@@ -21,6 +22,12 @@ $(document).ready(function () {
   let accumulateSecondes = 0;
   //計時器
   let timer;
+  let volume = $("input").val() / 100;
+
+  $(".volume").change(function (e) {
+    e.preventDefault();
+    volume = $("input").val() / 100;
+  });
   //一開始只有"開始計時"可以點擊
   window.onload = function () {
     $(".pause").attr("disabled", "disabled");
@@ -30,6 +37,9 @@ $(document).ready(function () {
     accumulateTimeCount(AllAccumulateTime_second);
   };
   $(".button-list").on("click", ".start", function (e) {
+    if (!muted) {
+      startAudio(volume);
+    }
     setTime_Second =
       60 * $(this).parent().parent().parent().find(".time-set").val();
     setText = $(this).parent().parent().parent().find(".text-set").val();
@@ -78,6 +88,16 @@ $(document).ready(function () {
     //所有鬧鐘顏色變回正常 可以使用
     $(this).parent().parent().parent().siblings().removeClass("clock-disabled");
   });
+  $(".muteButton").toggle(
+    function () {
+      muted = true;
+      $(".muteButton").text("靜音");
+    },
+    function () {
+      muted = false;
+      $(".muteButton").text("現在有聲音");
+    }
+  );
 
   //倒數計時
   function countDown(time, text) {
@@ -109,7 +129,7 @@ $(document).ready(function () {
   }
   //將累積的時間 機到localStorage
   function setLocalStorage(time) {
-    console.log(AllAccumulateTime_second);
+    //console.log(AllAccumulateTime_second);
     localStorage.setItem("AllAccumulateTime_second", AllAccumulateTime_second);
   }
   setLocalStorage(10);
@@ -134,3 +154,12 @@ $(document).ready(function () {
     $(".accumulateHours").text(`${accumulateHours}小時`);
   }
 });
+//開始音效
+function startAudio(volume) {
+  //可以用github的mp3 url //
+  const audio = new Audio(
+    "https://github.com/newstarellie/Pomodoro-Timer-/blob/main/drump.mp3?raw=true"
+  );
+  audio.volume = volume;
+  audio.play();
+}
