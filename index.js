@@ -12,7 +12,6 @@ $(document).ready(function () {
   } else {
     localStorage.setItem("AllAccumulateTime_second", 0);
   }
-  let muted = false;
   //localStorage.setItem("AllAccumulateTime_second", 0);
   //console.log(typeof AllAccumulateTime_second, AllAccumulateTime_second);
 
@@ -79,10 +78,6 @@ $(document).ready(function () {
     //所有鬧鐘顏色變回正常 可以使用
     $(this).parent().parent().parent().siblings().removeClass("clock-disabled");
   });
-  $(".muteButton").on("click", function () {
-    muted = true;
-    $(".muteButton").text("已靜音");
-  });
 
   //倒數計時
   function countDown(time, text) {
@@ -94,7 +89,7 @@ $(document).ready(function () {
           accumulateTimeCount(AllAccumulateTime_second);
           time -= 1;
           AllAccumulateTime_second += 1;
-        } else if ((time = 1) && !muted) {
+        } else if ((time = 1)) {
           finishedAlarm(text);
         } else {
           clearInterval(timer);
@@ -114,7 +109,7 @@ $(document).ready(function () {
   }
   //將累積的時間 機到localStorage
   function setLocalStorage(time) {
-    //console.log(AllAccumulateTime_second);
+    console.log(AllAccumulateTime_second);
     localStorage.setItem("AllAccumulateTime_second", AllAccumulateTime_second);
   }
   setLocalStorage(10);
