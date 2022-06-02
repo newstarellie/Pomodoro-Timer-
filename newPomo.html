@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>newPomo</title>
+
+    <!--Pure.css-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.1.0/build/pure-min.css"
+      integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="newPomo.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="btn-list">
+        <button class="btn-start pure-button">開始計時</button>
+        <button class="btn-stop pure-button">停止計時</button>
+      </div>
+      <p class="alarmText">點擊開始計時</p>
+      <div class="showAccumulateTime">
+        <div>累積工作:</div>
+        <p>00時</p>
+        <p>00分</p>
+        <p>00秒</p>
+      </div>
+      <div class="countDownTime">
+        <div>倒數時間:</div>
+        <p style="display: none">00時</p>
+        <p>00分</p>
+        <p>00秒</p>
+      </div>
+
+      <form class="clock-list pure-form pure-form-aligned">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="work-time-set1">工作時間</label>
+            <input type="number" value="25" id="work-time-set1" min="1" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="break-time-set1">休息時間</label>
+            <input type="number" value="5" id="break-time-set1" min="1" />
+          </div>
+          <div class="pure-control-group">
+            <label for="work-time-set2">工作時間</label>
+            <input type="number" value="25" id="work-time-set2" min="1" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="break-time-set2">休息時間</label>
+            <input type="number" value="5" id="break-time-set2" min="1" />
+          </div>
+        </fieldset>
+      </form>
+
+      <form class="textSetting pure-form pure-form-aligned">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="break-time-alarm">休息提醒:</label>
+            <input type="text" value="休息一下" id="break-time-alarm" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="work-time-alarm"> 工作提醒:</label>
+            <input type="text" value="開始工作" id="work-time-alarm" />
+          </div>
+          <div class="pure-control-group">
+            <label for="finished-time-alarm"> 結束提醒:</label>
+            <input type="text" value="結束所有鬧鐘" id="finished-time-alarm" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="cycle-times">循環計時:</label>
+            <input type="number" value="3" id="cycle-times" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="newPomo.js"></script>
+  </body>
+</html>
