@@ -26,4 +26,4 @@
 
 - [CodePen](https://codepen.io/newstarellie/pen/WNMdmbb)
 - [GitHub](https://github.com/newstarellie/Pomodoro-Timer-)
-連結:
+
