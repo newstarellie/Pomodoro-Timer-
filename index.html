@@ -4,144 +4,85 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POMO</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Pomo</title>
+
+    <!--Pure.css-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.1.0/build/pure-min.css"
+      integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="wrap">
-      <header>
-        <div class="accumulateTime">
-          <h1>今天累積工作時間:</h1>
-          <div>
-            <p class="accumulateHours">00小時</p>
-          </div>
-          <div>
-            <p class="accumulateMinutes">00分鐘</p>
-          </div>
-          <div>
-            <p class="accumulateSecondes">00秒</p>
-          </div>
-        </div>
-        <div class="countdownTime">
-          <h2>倒數時間:</h2>
-          <p class="countDownMinute">00分</p>
-          <p class="countDownSecond">00秒</p>
-        </div>
-        <input class="volume" type="range" min="0" max="100" />
+      <div class="btn-list">
+        <button class="btn-start pure-button">開始計時</button>
+        <button class="btn-stop pure-button">停止計時</button>
+      </div>
+      <p class="alarmText">點擊開始計時</p>
+      <div class="showAccumulateTime">
+        <div>累積工作:</div>
+        <p>00時</p>
+        <p>00分</p>
+        <p>00秒</p>
+      </div>
+      <div class="countDownTime">
+        <div>倒數時間:</div>
+        <p style="display: none">00時</p>
+        <p>00分</p>
+        <p>00秒</p>
+      </div>
 
-        <button type="button" class="muteButton">現在有聲音</button>
-      </header>
-      <ul class="clock-list">
-        <li class="clock-item work-clock" data-num="1">
-          <div>
-            <label for="item1">工作1</label>
-            <input
-              class="time-set"
-              min="1"
-              max="60"
-              id="item1"
-              type="number"
-              value="25"
-            />
-            <label for="finished-alarm">結束提醒:</label>
-            <input
-              class="text-set"
-              type="text"
-              id="finished-alarm"
-              value="休息一下"
-            />
+      <form class="clock-list pure-form pure-form-aligned">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="work-time-set1">工作時間</label>
+            <input type="number" value="25" id="work-time-set1" min="1" />
           </div>
-          <ul class="button-list">
-            <li><button type="button" class="start">開始計時</button></li>
-            <li><button type="button" class="pause">暫停</button></li>
-            <li><button type="button" class="continue">繼續</button></li>
-            <li><button type="button" class="stop">停止</button></li>
-          </ul>
-        </li>
-        <li class="clock-item break-clock" data-num="2">
-          <div>
-            <label for="item1">休息1</label>
-            <input
-              class="time-set"
-              min="1"
-              max="60"
-              id="item1"
-              type="number"
-              value="5"
-            />
-            <label for="finished-alarm">結束提醒:</label>
-            <input
-              class="text-set"
-              type="text"
-              id="finished-alarm"
-              value="開始工作"
-            />
+
+          <div class="pure-control-group">
+            <label for="break-time-set1">休息時間</label>
+            <input type="number" value="5" id="break-time-set1" min="1" />
           </div>
-          <ul class="button-list">
-            <li><button type="button" class="start">開始計時</button></li>
-            <li><button type="button" class="pause">暫停</button></li>
-            <li><button type="button" class="continue">繼續</button></li>
-            <li><button type="button" class="stop">停止</button></li>
-          </ul>
-        </li>
-        <li class="clock-item work-clock" data-num="1">
-          <div>
-            <label for="item1">工作1</label>
-            <input
-              class="time-set"
-              min="1"
-              max="60"
-              id="item1"
-              type="number"
-              value="25"
-            />
-            <label for="finished-alarm">結束提醒:</label>
-            <input
-              class="text-set"
-              type="text"
-              id="finished-alarm"
-              value="休息一下"
-            />
+          <div class="pure-control-group">
+            <label for="work-time-set2">工作時間</label>
+            <input type="number" value="25" id="work-time-set2" min="1" />
           </div>
-          <ul class="button-list">
-            <li><button type="button" class="start">開始計時</button></li>
-            <li><button type="button" class="pause">暫停</button></li>
-            <li><button type="button" class="continue">繼續</button></li>
-            <li><button type="button" class="stop">停止</button></li>
-          </ul>
-        </li>
-        <li class="clock-item break-clock" data-num="2">
-          <div>
-            <label for="item1">休息1</label>
-            <input
-              class="time-set"
-              min="1"
-              max="60"
-              id="item1"
-              type="number"
-              value="5"
-            />
-            <label for="finished-alarm">結束提醒:</label>
-            <input
-              class="text-set"
-              type="text"
-              id="finished-alarm"
-              value="開始工作"
-            />
+
+          <div class="pure-control-group">
+            <label for="break-time-set2">休息時間</label>
+            <input type="number" value="5" id="break-time-set2" min="1" />
           </div>
-          <ul class="button-list">
-            <li><button type="button" class="start">開始計時</button></li>
-            <li><button type="button" class="pause">暫停</button></li>
-            <li><button type="button" class="continue">繼續</button></li>
-            <li><button type="button" class="stop">停止</button></li>
-          </ul>
-        </li>
-      </ul>
+        </fieldset>
+      </form>
+
+      <form class="textSetting pure-form pure-form-aligned">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="break-time-alarm">休息提醒:</label>
+            <input type="text" value="休息一下" id="break-time-alarm" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="work-time-alarm"> 工作提醒:</label>
+            <input type="text" value="開始工作" id="work-time-alarm" />
+          </div>
+          <div class="pure-control-group">
+            <label for="finished-time-alarm"> 結束提醒:</label>
+            <input type="text" value="結束所有鬧鐘" id="finished-time-alarm" />
+          </div>
+
+          <div class="pure-control-group">
+            <label for="cycle-times">循環計時:</label>
+            <input type="number" value="3" id="cycle-times" />
+          </div>
+        </fieldset>
+      </form>
     </div>
-
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script src="index.js"></script>
-    <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   </body>
 </html>
